@@ -2,7 +2,10 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+    
+
         img {
             height: 300px;
         }
@@ -15,16 +18,32 @@
             flex: 0 0 14.555555%;
             margin-right: 10px;
             margin-top: 47px;
-            border: 1px solid rgb(217, 214, 214)
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border: 1px solid rgb(217, 214, 214);
+            border-radius: 2px;
         }
 
         .brands {
-            font-size: 10px;
+            font-size: 16px;
         }
+        #heading-accessories{
+            padding: 8px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        /* .brand{
+            display: flex;
+            justify-content: center;
+        }
+        .access-brand{
+            position: relative;
+        } */
 
         .prodName {
-            font-size: 15px;
-            margin: 10px 0 10px 0;
+            font-size: 18px;
+            padding: 2px;
+            text-align: left;
+            margin: 10px 0 10px 8px;
+            font-family:'Trebuchet MS', sans-serif;
         }
 
         .price {
@@ -34,20 +53,60 @@
             margin: 10px 0 10px 0;
         }
 
+        .child-list {
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 0;
+            margin: 20px;
+        }
+
         .parent-list {
             display: flex;
             flex-wrap: wrap;
             padding-left: 0;
             margin: 20px;
         }
+
+        @media only screen and (max-width:800px) {
+
+            /* For tablets: */
+            .main {
+                width: 80%;
+                padding: 0;
+            }
+
+            .brand {
+                width: 100%;
+            }
+
+            .access-brand {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width:500px) {
+
+            /* For mobile phones: */
+            .brand,
+            .main,
+            .access-brand {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div>
-        <h1>Product Listing</h1>
+    <div id="main">
+        <h1>Clothing for Men and Women</h1>
         <div id="brand" class="parent-list"></div>
+        <div id="div-head"><h1 id="heading-accessories">Accessories for Men and Women</h1></div>
+        <div id="access-brand" class="child-list"></div>
+
     </div>
+
+    </div>
+
     <script src="html-grid.js"></script>
 </body>
 

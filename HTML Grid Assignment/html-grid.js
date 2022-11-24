@@ -94,7 +94,10 @@ var productList = [
       brand: "SASSAFRAS",
       price: 5200,
     },
-    {
+     ];
+     
+     var accessoriesList = [
+     {
       id: "6",
       name: "Unisex Silver-Toned Series 3 Smart Watch",
       preview:
@@ -179,7 +182,9 @@ var productList = [
       brand: "Apple",
       price: 14999,
     },
+  
   ];
+
   function getClothingList() {
     let products = document.getElementById("brand");
     productList.forEach((list) => {
@@ -209,3 +214,32 @@ var productList = [
   }
   
   getClothingList();
+
+  function getAccessoriesList() {
+    let products = document.getElementById("access-brand");
+    accessoriesList.forEach((list) => {
+      const mainDiv = document.createElement("div");
+      const productNameElement = document.createElement("div");
+      const brandElement = document.createElement("span");
+      const img = document.createElement("img");
+      const priceElement = document.createElement("div");
+  
+      products.append(mainDiv);
+  
+      mainDiv.append(img);
+      mainDiv.append(productNameElement);
+      mainDiv.append(brandElement);
+      mainDiv.append(priceElement);
+  
+      img.setAttribute("src", list.photos[0]);
+      brandElement.innerHTML = list.brand;
+      productNameElement.innerHTML = list.name;
+      priceElement.innerHTML = "Rs " + list.price;
+  
+      mainDiv.setAttribute("class", "productCard");
+      brandElement.setAttribute("class", "brands");
+      productNameElement.setAttribute("class", "prodName");
+      priceElement.setAttribute("class", "price");
+    });
+  }
+  getAccessoriesList();
